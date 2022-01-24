@@ -1,14 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import ColorModeTheme from "./providerMat/ColorModeTheme";
+import theme from "./theme";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <ChakraProvider theme={theme}>
+    <ColorModeScript
+      initialColorMode={ColorModeTheme.config.initialColorMode}
+    />
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <a href="http://naver.com">살짝ㄱ쿵</a>
+  </ChakraProvider>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
