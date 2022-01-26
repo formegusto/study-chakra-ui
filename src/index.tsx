@@ -4,15 +4,41 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ColorModeTheme from "./providerMat/ColorModeTheme";
-import theme from "./theme";
+import { customTheme, singleCompTheme } from "./theme/customTheme";
+
+/*
+Semantic token example theme
+오우,, _dark로 컬러조절 가능함
+
+const customTheme = extendTheme({
+  semanticTokens: {
+    colors: {
+      error: "red.500",
+      success: "green.500",
+      primary: {
+        default: "red.500",
+        _dark: "red.400",
+      },
+      secondary: {
+        default: "red.800",
+        _dark: "red.700",
+      },
+    },
+  },
+});
+*/
+
+/*
+default theme 확인
+https://chakra-ui.com/docs/theming/theme
+*/
 
 ReactDOM.render(
-  <ChakraProvider theme={theme}>
+  <ChakraProvider theme={singleCompTheme}>
     <ColorModeScript
       initialColorMode={ColorModeTheme.config.initialColorMode}
     />
     <App />
-    <a href="http://naver.com">살짝ㄱ쿵</a>
   </ChakraProvider>,
   document.getElementById("root")
 );
