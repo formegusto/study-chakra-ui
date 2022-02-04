@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ColorModeTheme from "./providerMat/ColorModeTheme";
-import { customTheme, singleCompTheme } from "./theme/customTheme";
+import menuTheme from "./theme/menuTheme";
 
 /*
 Semantic token example theme
@@ -34,7 +34,7 @@ https://chakra-ui.com/docs/theming/theme
 */
 
 ReactDOM.render(
-  <ChakraProvider theme={singleCompTheme}>
+  <ChakraProvider theme={menuTheme}>
     <ColorModeScript
       initialColorMode={ColorModeTheme.config.initialColorMode}
     />
